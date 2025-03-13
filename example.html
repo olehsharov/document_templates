@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printer Friendly Document</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0mm;
+        }
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            font-size: 1rem;
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 0mm 15mm 20mm 15mm;
+            /* border: 1px solid #000; */
+        }
+        html, body {
+            zoom: 100%;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+    <h1>Наряд на пошив</h1>
+    <h3>Замовлення</h3>
+    <table width="100%">
+        <tr>
+            <td>
+                <b>Модель</b>
+            </td>
+            <td>
+                Сукня така-то
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Розмір</b>
+            </td>
+            <td>
+                XXXL
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Кількість</b>
+            </td>
+            <td>
+                2
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Виконавець</b>
+            </td>
+            <td>
+                Гагага
+            </td>
+        </tr>
+    </table>
+    <h3>Властивості</h3>
+    <p>Props list</p>
+    <h3>Зміни</h3>
+    <table width="100%">
+        <tr>
+            <td>
+                <b>Коментар</b>
+            </td>
+            <td>
+                qwkjedhqkwejhdkqjwhekdjhqwkedjh
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Мірки</b>
+            </td>
+            <td>
+                66
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Тканина</b>
+            </td>
+            <td>
+                М4060
+            </td>
+        </tr>
+    </table>
+    <div class="page-break"></div>
+    <h1>Test document</h1>
+    <p>Footer content here</p>
+</body>
+</html>
