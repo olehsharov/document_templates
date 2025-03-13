@@ -1,7 +1,21 @@
-<div class="test">Hello world</div>
-{{#each this}}
-    <div class="test">
-        <h1>{{this.name}}</h1>
-        <p>{{this.description}}</p>
-    </div>
-{{/each}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printer Friendly Document</title>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/olehsharov/document_templates/refs/heads/main/static/main.css">
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <header class="no-print text-xs">
+        <h1>Printer Friendly Document</h1>
+    </header>
+    <main>
+        <p>This is a clean, printer-friendly template. All unnecessary styles and colors are removed when printing.</p>
+    </main>
+    <footer class="no-print">
+        <p>Footer content here</p>
+    </footer>
+</body>
+</html>
