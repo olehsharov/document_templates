@@ -65,6 +65,10 @@
             <td>{{record.fields.Товар.[0].fields.Name}}</td>
         </tr>
         <tr>
+            <td width="20%"><b>Найменування</b></td>
+            <td>{{record.fields.Товар.[0].fields.Найменування}}</td>
+        </tr>
+        <tr>
             <td><b>Опис</b></td>
             <td>{{record.fields.Товар.[0].fields.Опис}}</td>
         </tr>
@@ -139,37 +143,39 @@
 
     <h2>Контроль якості</h2>
 
-    <table width="100%">
-        <thead style="font-weight: bold;">
-            <tr>
-                <td>Size</td>
-                {{#each (uniq record.fields.Товар.[0].fields.[Мірки найменування] "fields.title_uk") as |measure|}}
-                    <td>
-                        {{measure}}
-                    </td>
-                {{/each}}
-            </tr>
-        </thead>
-        <tbody>
-            {{#each (uniq record.fields.Товар.[0].fields.[Мірки найменування] "fields.Розмір") as |size|}}
+    {{#if record.fields.Товар.[0].fields.[Мірки найменування]}}
+        <table width="100%">
+            <thead style="font-weight: bold;">
                 <tr>
-                    <td>{{size}}</td>
-                    {{#each (uniq ../record.fields.Товар.[0].fields.[Мірки найменування] "fields.title_uk") as |measure|}}
-                        {{#each ../../record.fields.Товар.[0].fields.[Мірки найменування]}}
-                            {{#if (eq fields.title_uk measure)}}
-                                {{#if (eq fields.Розмір size)}}
-                                    <td>
-                                        {{fields.[Значення (cm)]}}
-                                    </td>
-                                {{/if}}
-                            {{/if}}
-                        {{/each}}
+                    <td>Size</td>
+                    {{#each (uniq record.fields.Товар.[0].fields.[Мірки найменування] "fields.title_uk") as |measure|}}
+                        <td>
+                            {{measure}}
+                        </td>
                     {{/each}}
                 </tr>
-            {{/each}}
-        </tbody>
-    </table>
-    
-    <!-- {{json record.fields.Товар.[0].fields.[Мірки найменування]}} -->
+            </thead>
+            <tbody>
+                {{#each (uniq record.fields.Товар.[0].fields.[Мірки найменування] "fields.Розмір") as |size|}}
+                    <tr>
+                        <td>{{size}}</td>
+                        {{#each (uniq ../record.fields.Товар.[0].fields.[Мірки найменування] "fields.title_uk") as |measure|}}
+                            {{#each ../../record.fields.Товар.[0].fields.[Мірки найменування]}}
+                                {{#if (eq fields.title_uk measure)}}
+                                    {{#if (eq fields.Розмір size)}}
+                                        <td>
+                                            {{fields.[Значення (cm)]}}
+                                        </td>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <h3>У цого виробу немає мірок</h3>
+    {{/if}}
 </body>
 </html>
