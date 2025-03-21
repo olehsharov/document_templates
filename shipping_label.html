@@ -1,0 +1,50 @@
+<table width="100%" border="1">
+    <tr>
+        <td width="10%">
+            <b>Товар</b>
+        </td>
+        <td>
+            {{ record.fields.Товар.[0].fields.Name }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Розмір</b>
+        </td>
+        <td>
+            {{ record.fields.Розмір }}            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Пошив</b>
+        </td>
+        <td>
+            {{ record.fields.Пошив.[0].fields.Name }}            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Виконавець</b>
+        </td>
+        <td>
+            {{ record.fields.Виконавець.[0].fields.Номер }}            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Зміни</b>
+        </td>
+        <td>
+            {{ record.fields.[Опис змін] }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Посилка</b>
+        </td>
+        <td>
+            {{record.fields.[Номер посилки].[0].fields.Номер }}
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,31 @@
+
+<table width="100%">
+    <thead style="font-weight: bold;">
+        <tr>
+            <td>Size</td>
+            {{#each (uniq record.fields.[Мірки] "fields.title_en_string") as |measure|}}
+                <td>
+                    {{measure}}
+                </td>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each (uniq record.fields.[Мірки] "fields.size_en_string") as |size|}}
+            <tr>
+                <td>{{size}}</td>
+                {{#each (uniq ../record.fields.[Мірки] "fields.title_en_string") as |measure|}}
+                    {{#each ../../record.fields.[Мірки]}}
+                        {{#if (eq fields.title_en_string measure)}}
+                            {{#if (eq fields.size_en_string size)}}
+                                <td>
+                                    {{fields.[Значення (cm)]}}
+                                </td>
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                {{/each}}
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
