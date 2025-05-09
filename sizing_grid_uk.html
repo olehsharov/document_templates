@@ -1,6 +1,43 @@
-<pre>
-</pre>
-<table width="100%">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          font-family: sans-serif;
+          font-size: 14px;
+          color: #333;
+        }
+      
+        thead {
+          background-color: #f4f4f4;
+        }
+      
+        th, td {
+          padding: 12px 16px;
+          border: 1px solid #ddd;
+          text-align: left;
+        }
+      
+        tbody tr:nth-child(odd) {
+          background-color: #fafafa;
+        }
+      
+        tbody tr:nth-child(even) {
+          background-color: #f0f0f0;
+        }
+      
+        tbody tr:hover {
+          background-color: #e0e0e0;
+        }
+      </style>
+  </head>
+  <body>
+    
+    <table width="100%">
     <thead style="font-weight: bold;">
         <tr>
             <td>Розмір</td>
@@ -33,3 +70,6 @@
         {{/each}}
     </tbody>
 </table>
+
+</body>
+</html>
