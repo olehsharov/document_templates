@@ -1,5 +1,12 @@
 {
-    "Найменування": {
+    "Товари": {
         "Мірки":"Мірки"
+    },
+    "getAllRecords": {
+        "allMeasurements": {
+            "table": "Довідник",
+            "view": "measurements",
+            "maxRecords": 100
+        }
     }
 }

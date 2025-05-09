@@ -1,0 +1,35 @@
+<pre>
+</pre>
+<table width="100%">
+    <thead style="font-weight: bold;">
+        <tr>
+            <td>Размер</td>
+            {{#each record.allMeasurements as |column|}}
+                {{#each ../record.fields.[Мірки] as |measure|}}
+                    {{#if (notEmpty measure.fields column.fields.Key)}}
+                        {{set column "present" true}}
+                    {{/if}}
+                {{/each}}
+                {{#if (eq column.present true)}}
+                    <td>
+                        {{column.fields.name_ru}}
+                    </td>
+                {{/if}}
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each record.fields.[Мірки] as |measures|}}
+            <tr>
+                <td>{{measures.fields.size_name}}</td>
+                {{#each ../record.allMeasurements as |column|}}
+                    {{#if (eq column.present true)}}
+                        <td>
+                            {{get measures.fields column.fields.Key}}
+                        </td>
+                    {{/if}}
+                {{/each}}
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
